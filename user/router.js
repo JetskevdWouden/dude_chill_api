@@ -82,12 +82,12 @@ router.put('/users/:userId/games/:gameId', (req, res, next) => {
                 .update({
                     gameId: gameId
                 })
-                .then(entity => {
+                .then(user => {
                     res
-                        .status(204)
+                        .status(200)
                         .send({
-                            message: `USER ${entity.username} WAS ADDED TO GAME ${gameId}`,
-                            user: entity
+                            message: `USER ${user.username} WAS ADDED TO GAME ${gameId}`,
+                            user: user
                         })
                 })
                 .catch(error => next(error))
@@ -111,12 +111,12 @@ router.put('/users/:id/stress', (req, res, next) => {
                 .update({
                     stress: stress
                 })
-                .then(entity => {
+                .then(user => {
                     res
-                        .status(204)
+                        .status(200)
                         .send({
-                            message: `USER ${entity.username}'s STRESS HAS BEEN UPDATED`,
-                            user: entity
+                            message: `USER ${user.username}'s STRESS HAS BEEN UPDATED`,
+                            user: user
                         })
                 })
                 .catch(error => next(error))
@@ -173,7 +173,7 @@ router.delete('/users/:id', (req, res, next) => {
                     .destroy()
                     .then(user => {
                         res
-                            .status(204)
+                            .status(200)
                             .send({
                                 message: `USER WITH ID ${userId} HAS BEEN DELETED`
                             })

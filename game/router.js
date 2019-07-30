@@ -19,37 +19,6 @@ router.post('/games', (req, res, next) => {
         .catch(error => next(error))
 })
 
-//GET GAME per id
-router.get('/games/:id', (req, res, next) => {
-    const gameId = req.params.id
-
-    Game
-        .findOne({
-            where: {
-                id: gameId
-            }, include: [{
-                model: User,
-                attributes: ["id", "username", "stress"]
-            }]
-        })
-        .then(game => {
-            if(!game) {
-                res
-                    .status(404)
-                    .send({
-                        message: `GAME WITH ID ${gameId} DOES NOT EXIST`
-                    })
-            } else {
-                res
-                    .status(200)
-                    .send({
-                        message: `GAME WITH ID ${gameId}`,
-                        game: game
-                    })
-            }
-        })
-})
-
 //DELETE GAME
 router.delete('/games/:id', (req, res, next) => {
     const gameId = req.params.id
@@ -61,14 +30,22 @@ router.delete('/games/:id', (req, res, next) => {
             }
         })
         .then(game => {
-            game
-                .destroy()
+                game
+                .destroy(game)
                 .then(game => {
-                    res
-                        .status(204)
-                        .send({
-                            message: `GAME WITH ID ${gameId} WAS DELETED`
-                        })
+                    if (!game) {
+                        res
+                            .status(404)
+                            .send({
+                                message: `GAME WITH ID ${gameId} DOES NOT EXIST`
+                            })
+                    } else {
+                        res
+                            .status(200)
+                            .send({
+                                message: `GAME WITH ID ${gameId} WAS DELETED`
+                            })
+                    }
                 })
                 .catch(error => next(error))
         })
