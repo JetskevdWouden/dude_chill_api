@@ -5,12 +5,14 @@ const cors = require('cors');
 const db = require('./db');
 
 //MODELS
-const User = require('./user/model');
-const Game = require('./game/model');
-const Stress = require('./stress/model');
-const Content = require('./content/model');
+// const User = require('./user/model');
+// const Game = require('./game/model');
+// const Content = require('./content/model');
 
 //ROUTES
+const userRouter = require('./user/router');
+const gameRouter = require('./game/router');
+const contentRouter = require('./content/router');
 
 //intialize & define port
 const app = express();
@@ -22,6 +24,9 @@ const jsonParser = bodyParser.json();
 //register middleware
 app.use(cors());
 app.use(jsonParser);
+app.use(userRouter);
+app.use(gameRouter);
+app.use(contentRouter);
 
 //add onListen function that logs the current port
 function onListen() {

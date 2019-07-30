@@ -8,6 +8,10 @@ const User = db.define(
         username: {
             type: Sequelize.STRING,
             allowNull: false
+        },
+        stress: {
+            type: Sequelize.INTEGER,
+            defaultValue: 50
         }
     },{
         timestamps: false,
