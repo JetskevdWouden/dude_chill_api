@@ -13,7 +13,7 @@ router.post('/sign-up', (req, res, next) => {
         .create(newUser)
         .then(user => {
             res
-                .status(201)
+                .status(200)
                 .send({
                     message: "NEW USER CREATED",
                     user: user
@@ -48,7 +48,7 @@ router.get('/users/:id', (req, res, next) => {
             }
         })
         .then(user => {
-            if(!user){
+            if (!user) {
                 res
                     .status(404)
                     .send({
@@ -97,7 +97,7 @@ router.put('/users/:userId/games/:gameId', (req, res, next) => {
 
 //UPDATE STRESS LEVEL
 router.put('/users/:id/stress', (req, res, next) => {
-    const userId = req.params.id 
+    const userId = req.params.id
     const stress = req.body.stress
 
     User
@@ -107,8 +107,8 @@ router.put('/users/:id/stress', (req, res, next) => {
             }
         })
         .then(user => {
-            user
-                .update({
+            console.log("USER", user)
+            user.update({
                     stress: stress
                 })
                 .then(user => {
@@ -125,7 +125,7 @@ router.put('/users/:id/stress', (req, res, next) => {
 })
 
 //GET USERS IN A GAME
-router.get('/users/games/:id', (req,res, next) => {
+router.get('/users/games/:id', (req, res, next) => {
     const gameId = req.params.id
     User
         .findAll({
@@ -134,7 +134,7 @@ router.get('/users/games/:id', (req,res, next) => {
             }
         })
         .then(users => {
-            if(!users){
+            if (!users) {
                 res
                     .status(200)
                     .send({
@@ -162,7 +162,7 @@ router.delete('/users/:id', (req, res, next) => {
             }
         })
         .then(user => {
-            if(!user) {
+            if (!user) {
                 res
                     .status(404)
                     .send({
