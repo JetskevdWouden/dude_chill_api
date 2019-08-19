@@ -4,7 +4,7 @@ const Content = require('./model');
 
 const router = new Router();
 
-//GET 10 RANDOM CONTENT
+//GET 8 RANDOM CONTENT
 router.get('/content', (req, res, next) => {
     Content
         .findAll({
