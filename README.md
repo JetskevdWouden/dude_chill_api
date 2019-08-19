@@ -71,7 +71,7 @@ Updates user's stress column.
 Destroys user from database by user id.
 
 ### :pushpin: Future Features
-I have plans to make this app into a multi-player game. Players will be able to sign up to the same game, receive the same 8 random GIFs and rate each GIF individually. At the end of the 8th GIF total scores will be presented and the groups of players in that game can see who is "stress chicken :chicken:" and who is the "ice (wo)man :ice:"
+I have plans to make this app into a multi-player game. Players will be able to sign up to the same game, receive the same 8 random GIFs and rate each GIF individually. At the end of the 8th GIF total scores will be presented and the groups of players in that game can see who is "stress chicken :chicken:" and who is the "ice (wo)man :snowman:"
 
 The framework for these features have partly already been added to the API.
 **Models:**
