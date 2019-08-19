@@ -3,7 +3,7 @@
 
 ## ![](https://emojis.slackmojis.com/emojis/images/1450319446/49/fireball.gif?1450319446)*The app to test your stress sensitivity*![](https://emojis.slackmojis.com/emojis/images/1450319446/49/fireball.gif?1450319446)
 
-### :pushpion: What is this?
+### :pushpin: What is this?
 This is the server side of the "Dude, chill..." React Native app.
 
 ### :pushpin: Links
@@ -11,18 +11,18 @@ This is the server side of the "Dude, chill..." React Native app.
 * Click [HERE](https://expo.io/@jetskevdwouden/dude_chill_) to :eyes: view && play the deployed "Dude, chill..." app on Expo.
 * Click [HERE](https://evening-escarpment-40999.herokuapp.com) for the deployed server.
 
-### Table of contents
+### :pushpin: Table of contents
 * [Technologies used](#technologies-used)
 * [Setup](#setup)
 * [API](#api)
 
-### Technology used
+### :pushpin: Technology used
 * Node.js
 * PostgreSQL
 * Express
 * Sequelize
 
-### Setup
+### :pushpin: Setup
 
 1. git clone
 2. npm install
