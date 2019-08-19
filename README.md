@@ -47,7 +47,6 @@ Connect to your database with:
 
 * content
 * user
-* game
 
 **Endpoints:**
 
@@ -69,9 +68,31 @@ Fetches user by id.
 Updates user's stress column.
 
 * `DELETE <base url>/users/:id`
-Destroys user from database by id.
+Destroys user from database by user id.
 
 ### :pushpin: Future Features
+I have plans to make this app into a multi-player game. Players will be able to sign up to the same game, receive the same 8 random GIFs and rate each GIF individually. At the end of the 8th GIF total scores will be presented and the groups of players in that game can see who is "stress chicken :chicken:" and who is the "ice (wo)man :ice:"
+
+The framework for these features have partly already been added to the API.
+**Models:**
+
+* game
+
+**Endpoints**
+
+* `POST <base url>/games`
+Creates a game in the database.
+
+* `DELETE <base url>/games/:id`
+Destroys a game in the database by game id.
+
+* `PUT <base url>/users/:userId/games/:gameId`
+Updates a user's game id by user id.
+
+* `GET <base url>/users/games/:id`
+Fetches all users by game id.
+
+
 
 
 
