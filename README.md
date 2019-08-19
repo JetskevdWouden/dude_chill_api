@@ -71,7 +71,7 @@ Updates user's stress column.
 * `DELETE <base url>/users/:id`
 Destroys user from database by id.
 
-### Future Features
+### :pushpin: Future Features
 
 
 
