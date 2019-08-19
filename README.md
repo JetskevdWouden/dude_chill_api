@@ -15,6 +15,7 @@ This is the server side of the "Dude, chill..." React Native app.
 * [Technologies used](#technologies-used)
 * [Setup](#setup)
 * [API](#api)
+* [Future Features](#future-features)
 
 ### :pushpin: Technology used
 * Node.js
@@ -40,5 +41,37 @@ $ docker run \
 Connect to your database with:
 * Mac: Postico
 * Linux: DBeaver
+
+### :pushpin: API
+**Models:**
+
+* content
+* user
+* game
+
+**Endpoints:**
+
+*`<base url>` is either http://localhost:4000 for local development or https://evening-escarpment-40999.herokuapp.com for the deployed backend.*
+
+* `GET <base url>/content`
+Fetches 8 random GIFs URL links from database.
+
+* `POST <base url>/sign-up` 
+Creates a new user in the database.
+
+* `GET <base url>/all-users`
+Fetches all users in the database.
+
+* `GET <base url>/users/:id`
+Fetches user by id.
+
+* `PUT <base url>/users/:id/stress`
+Updates user's stress column.
+
+* `DELETE <base url>/users/:id`
+Destroys user from database by id.
+
+### Future Features
+
 
 
